@@ -8,18 +8,15 @@ const prud = []
 
 function Layout() {
   const [arrPrud, setArrPrud] = useState()
-  const [itemId, setItemId] = useState()
-   
+
 
          const addCart = (id)=>{  
-          setItemId(id)
-         !prud[itemId]? prud[itemId]= 1: prud[itemId]+=1;
+         !prud[id]? prud[id]= 1: prud[id]+=1;
           setArrPrud(prud);
         }
 
         const voidCart = (id)=>{
-         setItemId(d=> d=id)
-         prud[itemId] !=1?  prud[itemId]-=1: prud[itemId] = '';
+         prud[id] !=1?  prud[id]-=1: prud[id] = '';
          setArrPrud(p=> p=prud);
         }
 
@@ -28,7 +25,7 @@ function Layout() {
     <div>
       <Header/>
       <Main addCart ={addCart} voidCart = {voidCart} pruds ={arrPrud} />
-      <Cart prud ={arrPrud} addCart ={addCart} voidCart = {voidCart}/>
+      <Cart pruds ={arrPrud} addCart ={addCart} voidCart = {voidCart}/>
     </div>
   )
 }

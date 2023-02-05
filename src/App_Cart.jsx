@@ -3,11 +3,11 @@ import CartCard from "./App_CartCard"
 function Cart(props) {
 
   
-  console.log(props.prud);
+  console.log(props.pruds);
   return (
     <div className="Cart">
       <h3>Cart</h3>
-      {props.prud? props.prud.map((v,i)=> v? <CartCard card ={i} stock = {v} addCart={props.addCart} voidCart = {props.voidCart}/>:v):''}
+      {props.pruds? props.pruds.map((v,i)=> v? <CartCard card ={i} pruds = {props.pruds} stock = {v} addCart={props.addCart} voidCart = {props.voidCart}/>:v):''}
     </div>
   )
 }

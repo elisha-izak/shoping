@@ -10,7 +10,7 @@ function ProductCard(props) {
       <p><h3>${props.prud.price}</h3></p>
       <span>{props.prud.title}</span>
       <br /></></Link>
-      {!props.pruds? <button onClick={()=> props.addCart(props.prud.id)}>{'add to cart'}</button>: props.pruds[props.prud.id]? <span><button onClick={()=> props.voidCart(props.prud.id)}>-</button>{props.pruds[props.prud.id]}<button onClick={()=> props.addCart(props.prud.id)}>+</button></span>:<button onClick={()=> props.addCart(props.prud.id)}>{'add to cart'}</button>}
+      {!props.pruds || !props.pruds[props.prud.id]? <button onClick={()=> props.addCart(props.prud.id)}>{'add to cart'}</button>: <span><button onClick={()=> props.voidCart(props.prud.id)}>-</button>{props.pruds[props.prud.id]}<button onClick={()=> props.addCart(props.prud.id)}>+</button></span>}
     </div>
   )
 }
